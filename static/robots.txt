@@ -1,0 +1,110 @@
+# Whiteboard Video Maker Docs — robots.txt
+# Maintained by Ahsan Mahmood (https://aoneahsan.com)
+# Crawl policy for https://docs.wbamai.aoneahsan.com
+# Every reputable search + AI/answer-engine bot is allowed; low-value scrapers
+# are blocked. The Sitemap directive lets crawlers discover the URL space.
+
+# --- Search engines ----------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# --- AI / answer-engine bots (citation surface — keep allowed) ---------------
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# --- Block low-value scraper bots --------------------------------------------
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# --- Default policy ----------------------------------------------------------
+User-agent: *
+Allow: /
+
+# --- Sitemap discovery -------------------------------------------------------
+Sitemap: https://docs.wbamai.aoneahsan.com/sitemap.xml

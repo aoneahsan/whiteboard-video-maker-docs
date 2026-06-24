@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.yarn/cache
+.yarn/install-state.gz
+.pnp.*
+
+# Build outputs
+.docusaurus/
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Env / secrets (docs repo is PUBLIC — never commit secrets)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+.firebase/
+.firebaserc.local
+
+# Project-record / private notes
+project-record-ignore/
+*.ignore.*
+
+# Unwanted lock files (yarn-only repo)
+package-lock.json
+pnpm-lock.yaml

@@ -1,0 +1,40 @@
+/**
+ * Whiteboard Video Maker docs theme — violet brand (#8B5CF6) on dark.
+ * Matches the app's brand tokens.
+ */
+
+:root {
+  --ifm-color-primary: #7c3aed;
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #5b21b6;
+  --ifm-color-primary-darkest: #4c1d95;
+  --ifm-color-primary-light: #8b5cf6;
+  --ifm-color-primary-lighter: #a78bfa;
+  --ifm-color-primary-lightest: #c4b5fd;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.12);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
+  --ifm-background-color: #120a1f;
+  --ifm-background-surface-color: #1a0d2e;
+  --docusaurus-highlighted-code-line-bg: rgba(167, 139, 250, 0.18);
+}
+
+.hero--primary {
+  --ifm-hero-background-color: #1a0d2e;
+  --ifm-hero-text-color: #ffffff;
+  background: linear-gradient(135deg, #1a0d2e 0%, #120a1f 100%);
+}
+
+.navbar__title {
+  font-weight: 700;
+}

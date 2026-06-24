@@ -1,0 +1,18 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a0d2e"/>
+      <stop offset="1" stop-color="#0f0a1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(96 150)">
+    <rect x="0" y="0" width="150" height="108" rx="12" fill="#18181B" stroke="#8B5CF6" stroke-width="6"/>
+    <path d="M26 64 L58 38 L92 70 L124 44" stroke="#A78BFA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="75" cy="132" r="9" fill="#8B5CF6"/>
+  </g>
+  <text x="96" y="380" font-family="Inter, Segoe UI, sans-serif" font-size="64" font-weight="800" fill="#ffffff">Whiteboard Video Maker</text>
+  <text x="96" y="445" font-family="Inter, Segoe UI, sans-serif" font-size="34" font-weight="500" fill="#C4B5FD">Documentation</text>
+  <text x="96" y="520" font-family="Inter, Segoe UI, sans-serif" font-size="28" font-weight="400" fill="#9CA3AF">Hand-drawn whiteboard animations in your browser — free, no watermark</text>
+  <text x="96" y="566" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="400" fill="#6B7280">docs.wbamai.aoneahsan.com</text>
+</svg>

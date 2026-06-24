@@ -1,0 +1,59 @@
+{
+  "name": "whiteboard-video-maker-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public documentation site for Whiteboard Video Maker (https://wbamai.aoneahsan.com) — a free browser + mobile whiteboard-animation video editor. Built with Docusaurus, deployed to Firebase Hosting and GitHub Pages.",
+  "author": {
+    "name": "Ahsan Mahmood",
+    "email": "aoneahsan@gmail.com",
+    "url": "https://aoneahsan.com"
+  },
+  "license": "MIT",
+  "homepage": "https://docs.wbamai.aoneahsan.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aoneahsan/whiteboard-video-maker-docs.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start --port 5962 --host 0.0.0.0",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve --port 5963",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc --noEmit",
+    "firebase:deploy": "yarn build && npx -y firebase-tools@latest deploy --only hosting --project whiteboard-video-maker-docs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.10.1",
+    "@docusaurus/preset-classic": "^3.10.1",
+    "@mdx-js/react": "^3.1.1",
+    "clsx": "^2.1.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.10.1",
+    "@docusaurus/tsconfig": "^3.10.1",
+    "@docusaurus/types": "^3.10.1",
+    "typescript": "~6.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  }
+}

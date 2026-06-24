@@ -1,0 +1,52 @@
+# Whiteboard Video Maker — Documentation Index
+
+> Whiteboard Video Maker is a free, browser- and mobile-based editor for creating hand-drawn whiteboard-style animation videos. Draw shapes, text, and images with sketch strokes, sequence them on a layered keyframe timeline, add text-to-speech narration, and export a WebM video or animated GIF — entirely client-side, with no subscription and no watermark. App: https://wbamai.aoneahsan.com. Author: Ahsan Mahmood (https://aoneahsan.com).
+
+## About
+
+Whiteboard Video Maker delivers the explainer-video workflow that commercial whiteboard-animation tools sell as desktop subscriptions, but for free on the web and on Android/iOS (a Capacitor 8 wrapper around the same React app). Rendering and export happen in the browser using the WebCodecs API (WebM/VP9 + Opus) with a MediaRecorder fallback, plus gif.js for animated GIF — so there is no server-side render cost and no upload-our-files requirement. Signed-in users can save projects to Firebase Firestore and store media in their own storage; everything else works without an account.
+
+This `llms.txt` follows the [llmstxt.org](https://llmstxt.org) spec.
+
+## Key facts
+
+- App URL: https://wbamai.aoneahsan.com
+- Docs URL: https://docs.wbamai.aoneahsan.com
+- Platforms: Web, Android, iOS (Capacitor 8)
+- Stack: React 19, TypeScript, Vite 8, Radix UI, Konva canvas, RoughJS, Firebase (Auth + Firestore), webm-muxer, gif.js
+- Export formats: WebM video (VP9/Opus) and animated GIF — NOT MP4
+- Price: free, no usage caps, no watermark
+- Board styles: whiteboard, blackboard, glassboard, greenscreen
+- Author / contact: Ahsan Mahmood — aoneahsan@gmail.com — +923046619706
+
+## Getting Started
+
+- [Introduction](https://docs.wbamai.aoneahsan.com/intro): What Whiteboard Video Maker is, who it is for, and how it works.
+- [Installation / access](https://docs.wbamai.aoneahsan.com/getting-started/installation): Open it on the web, or install the Android/iOS app.
+- [Quick Start](https://docs.wbamai.aoneahsan.com/getting-started/quick-start): Build and export your first animation in minutes.
+
+## Features
+
+- [Features overview](https://docs.wbamai.aoneahsan.com/features/overview): The full capability catalog.
+- [Board styles](https://docs.wbamai.aoneahsan.com/features/board-styles): Whiteboard, blackboard, glassboard, greenscreen.
+- [Drawing tools](https://docs.wbamai.aoneahsan.com/features/drawing-tools): Pen, shapes, arrows, text, images with hand-drawn sketch effects.
+- [Timeline & keyframes](https://docs.wbamai.aoneahsan.com/features/timeline-keyframes): Layered timeline, per-element keyframes, draw order, transitions.
+- [Audio & narration](https://docs.wbamai.aoneahsan.com/features/audio-narration): Text-to-speech, voice recording, audio mixing, sound effects.
+- [Assets & libraries](https://docs.wbamai.aoneahsan.com/features/assets-libraries): Icons, characters, images, emoji, fonts, and your own uploads.
+
+## Guides
+
+- [Create your first video](https://docs.wbamai.aoneahsan.com/guides/create-first-video): End-to-end walkthrough.
+- [Export to WebM or GIF](https://docs.wbamai.aoneahsan.com/guides/export-webm-gif): Resolutions, quality, audio, and limits.
+- [Save & sync projects](https://docs.wbamai.aoneahsan.com/guides/save-and-sync-projects): Accounts, Firestore sync, version history.
+
+## Reference
+
+- [Export formats](https://docs.wbamai.aoneahsan.com/reference/export-formats): WebM and GIF specifics, browser support, fallbacks.
+- [Platforms](https://docs.wbamai.aoneahsan.com/reference/platforms): Web, Android, iOS differences.
+- [Privacy & data](https://docs.wbamai.aoneahsan.com/reference/privacy-and-data): What is stored, what stays local.
+
+## More
+
+- [FAQ](https://docs.wbamai.aoneahsan.com/faq)
+- [About the author](https://docs.wbamai.aoneahsan.com/about-the-author)
