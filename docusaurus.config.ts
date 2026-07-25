@@ -137,6 +137,17 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // `docs/` is BOTH the published content dir and the home of the
+          // fixed-path internal file docs/MANUAL-TASKS.md. Keep the path (the
+          // global rule fixes it) but never publish it — this repo is public.
+          // NOTE: `exclude` REPLACES the plugin defaults, so they are restated.
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+            'MANUAL-TASKS.md',
+          ],
           routeBasePath: '/',
           editUrl: 'https://github.com/aoneahsan/whiteboard-video-maker-docs/edit/main/',
           showLastUpdateTime: true,

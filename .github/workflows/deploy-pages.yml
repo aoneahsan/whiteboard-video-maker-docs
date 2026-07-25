@@ -1,55 +1,90 @@
-# GitHub Pages deploy for Whiteboard Video Maker docs.
+# ──────────────────────────────────────────────────────────────────────────
+# Deploy this Docusaurus docs site to GitHub Pages on every push to main.
 #
-# Builds the Docusaurus site and publishes it to GitHub Pages. This is a
-# SECOND hosting target alongside Firebase Hosting (see firebase.json +
-# DEPLOY.md); both serve the same `build/` output.
+# The canonical docs-site workflow — see ~/.claude/rules/docs-sites.md.
+# Docs sites deploy to GitHub Pages ONLY; they never get a Firebase project.
 #
-# The custom domain is set by static/CNAME (wbamai-docs.aoneahsan.com).
-# Enable Pages once in the repo: Settings -> Pages -> Source = GitHub Actions.
+# Uses the official Pages flow (upload-pages-artifact + deploy-pages), so there
+# is no gh-pages branch to maintain. The custom domain is pinned by static/CNAME,
+# which Docusaurus copies verbatim into build/ — so build/CNAME ships inside the
+# artifact automatically and needs no extra step.
 #
-# NOTE: the actual deploy is USER-ONLY — the agent never triggers it. Enabling
-# Pages + attaching the DNS CNAME record is a one-time owner action.
-name: Deploy docs to GitHub Pages
+# Optional analytics keys come from repo Actions secrets; when a secret is unset
+# the corresponding provider is skipped entirely, so the build never depends on
+# one. NO secret is ever committed to this repo — it is public.
+#
+# Owner-only setup (docs/MANUAL-TASKS.md): the Hostinger DNS CNAME record
+# pointing this docs subdomain at aoneahsan.github.io, and repo
+# Settings → Pages → custom domain + Enforce HTTPS.
+# ──────────────────────────────────────────────────────────────────────────
+
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# Least-privilege token + the id-token that deploy-pages requires.
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Never run two deploys at once; let an in-progress run finish.
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          node-version: 22
-      - name: Enable Corepack (Yarn)
-        run: corepack enable
+          fetch-depth: 0 # full history so showLastUpdateTime is accurate
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Enable Corepack (Yarn Berry)
+        run: |
+          corepack enable
+          corepack prepare yarn@stable --activate
+          yarn --version
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
         run: yarn install --immutable
+
       - name: Build
         run: yarn build
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+        env:
+          # All optional — an absent secret skips that provider.
+          GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
+          CLARITY_PROJECT_ID: ${{ secrets.CLARITY_PROJECT_ID }}
+          AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: build
 
   deploy:
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

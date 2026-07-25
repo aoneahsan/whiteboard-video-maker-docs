@@ -26,8 +26,7 @@
     "serve": "docusaurus serve --port 5963",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc --noEmit",
-    "firebase:deploy": "yarn build && npx -y firebase-tools@latest deploy --only hosting --project whiteboard-video-maker-docs"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.1",
