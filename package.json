@@ -54,5 +54,6 @@
       "last 3 firefox version",
       "last 5 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@4.17.1"
 }
