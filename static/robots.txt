@@ -1,6 +1,6 @@
 # Whiteboard Video Maker Docs — robots.txt
 # Maintained by Ahsan Mahmood (https://aoneahsan.com)
-# Crawl policy for https://docs.wbamai.aoneahsan.com
+# Crawl policy for https://wbamai-docs.aoneahsan.com
 # Every reputable search + AI/answer-engine bot is allowed; low-value scrapers
 # are blocked. The Sitemap directive lets crawlers discover the URL space.
 
@@ -107,4 +107,4 @@ User-agent: *
 Allow: /
 
 # --- Sitemap discovery -------------------------------------------------------
-Sitemap: https://docs.wbamai.aoneahsan.com/sitemap.xml
+Sitemap: https://wbamai-docs.aoneahsan.com/sitemap.xml

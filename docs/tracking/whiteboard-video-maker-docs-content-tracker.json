@@ -1,7 +1,7 @@
 {
   "$schema": "whiteboard-video-maker-docs-content-tracker",
   "description": "SEO/AEO content-enrichment tracker for the Whiteboard Video Maker docs site. Resumable across sessions. Each batch enriches/adds pages toward the per-page-uniqueness floor (1000+ words, definition-first intro, FAQ, examples) per ~/.claude/rules/seo-aeo-ranking.md.",
-  "site": "https://docs.wbamai.aoneahsan.com",
+  "site": "https://wbamai-docs.aoneahsan.com",
   "createdAt": "2026-06-24",
   "lastUpdated": "2026-06-24",
   "batchSize": 10,
@@ -47,7 +47,7 @@
     ]
   },
   "humanOnlyNextSteps": [
-    "Verify docs.wbamai.aoneahsan.com in Google Search Console + submit sitemap.xml",
+    "Verify wbamai-docs.aoneahsan.com in Google Search Console + submit sitemap.xml",
     "Verify in Bing Webmaster Tools + submit sitemap",
     "Deploy via Firebase Hosting or GitHub Pages (see DEPLOY.md)"
   ]

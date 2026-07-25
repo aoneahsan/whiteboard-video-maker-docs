@@ -6,7 +6,7 @@ Built with **Docusaurus 3**. This is a **PUBLIC** repo — it must contain **NO 
 | Property | Value |
 |----------|-------|
 | Type | Docusaurus 3 documentation site |
-| App docs URL | https://docs.wbamai.aoneahsan.com |
+| App docs URL | https://wbamai-docs.aoneahsan.com |
 | App (product) URL | https://wbamai.aoneahsan.com |
 | Hosting | Firebase Hosting + GitHub Pages (dual-host, same `build/`) |
 | Package manager | yarn ONLY |
@@ -22,7 +22,8 @@ Built with **Docusaurus 3**. This is a **PUBLIC** repo — it must contain **NO 
   `sitemap.xml`, `static/llms.txt`, JSON-LD (WebSite + SoftwareApplication + Organization) in
   `docusaurus.config.ts`, per-page front-matter `description` + `keywords`.
 - **Verify** with `yarn build` + `yarn typecheck` (never run dev servers as a "verification").
-- **Deploy is USER-ONLY** — see `DEPLOY.md`. The agent never deploys.
+- **Firebase Hosting deploy is agent-authorized** (project is under `code/` — global auto-deploy rule)
+  via `yarn firebase:deploy`; see `DEPLOY.md`. **Custom-domain DNS attachment stays USER-ONLY.**
 - **Content tracker:** `docs/tracking/whiteboard-video-maker-docs-content-tracker.json` (resumable
   long-tail SEO enrichment).
 
@@ -35,7 +36,7 @@ yarn typecheck   # tsc --noEmit
 yarn start       # dev server (port 5962) — USER runs this, not the agent
 ```
 
-_Last Updated: 2026-06-24_
+_Last Updated: 2026-07-25_
 
 
 ## Sub-agents & Skills — Main-Context-First (IRON-SOLID)

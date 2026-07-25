@@ -4,7 +4,7 @@
 # SECOND hosting target alongside Firebase Hosting (see firebase.json +
 # DEPLOY.md); both serve the same `build/` output.
 #
-# The custom domain is set by static/CNAME (docs.wbamai.aoneahsan.com).
+# The custom domain is set by static/CNAME (wbamai-docs.aoneahsan.com).
 # Enable Pages once in the repo: Settings -> Pages -> Source = GitHub Actions.
 #
 # NOTE: the actual deploy is USER-ONLY — the agent never triggers it. Enabling

@@ -4,7 +4,7 @@ Public documentation site for **[Whiteboard Video Maker](https://wbamai.aoneahsa
 browser- and mobile-based whiteboard-animation video editor.
 
 - **App:** https://wbamai.aoneahsan.com
-- **Docs (this site):** https://docs.wbamai.aoneahsan.com
+- **Docs (this site):** https://wbamai-docs.aoneahsan.com
 - **Built with:** [Docusaurus 3](https://docusaurus.io)
 - **Hosting:** Firebase Hosting **and** GitHub Pages (dual-host — same `build/` output)
 

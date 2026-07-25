@@ -8,7 +8,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // App: https://wbamai.aoneahsan.com
 // ---------------------------------------------------------------------------
 
-const SITE_URL = 'https://docs.wbamai.aoneahsan.com';
+const SITE_URL = 'https://wbamai-docs.aoneahsan.com';
 const APP_URL = 'https://wbamai.aoneahsan.com';
 
 const config: Config = {
