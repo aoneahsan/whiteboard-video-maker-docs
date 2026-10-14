@@ -2,7 +2,7 @@
 
 **Last Updated:** 2026-10-14
 
-The public docs repository deploys through [GitHub Pages](https://github.com/aoneahsan/whiteboard-video-maker-docs/actions/workflows/deploy-pages.yml) on pushes to `main`. The workflow runs `yarn install --immutable` and `yarn build`, uploads `build/`, then publishes with the official Pages action. The repository's Pages settings name `wbamai-docs.aoneahsan.com` and enforce HTTPS. `static/CNAME` is copied into the build.
+The public docs repository deploys through [GitHub Pages](https://github.com/aoneahsan/whiteboard-video-maker-docs/actions/workflows/deploy-pages.yml) on pushes to `main`. The workflow uses Node 24, runs `yarn install --immutable` and `yarn build`, uploads `build/`, then publishes with the official Pages action. The repository's Pages settings name `wbamai-docs.aoneahsan.com` and enforce HTTPS. `static/CNAME` is copied into the build.
 
 Before pushing, run `yarn typecheck`, `yarn build`, and inspect the built home at desktop and mobile widths. After pushing, confirm the Pages workflow succeeds, then check the live home, `/sitemap.xml`, `/robots.txt`, and `/llms.txt` over HTTPS.
 
