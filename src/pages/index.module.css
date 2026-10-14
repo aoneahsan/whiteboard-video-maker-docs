@@ -13,6 +13,23 @@
   flex-wrap: wrap;
 }
 
+.docsButton,
+.docsButton:hover,
+.docsButton:focus-visible {
+  color: #ffffff;
+  border-color: #c4b5fd;
+}
+
+.docsButton {
+  background: transparent;
+  border: 1px solid #c4b5fd;
+}
+
+.docsButton:hover,
+.docsButton:focus-visible {
+  background: #4c1d95;
+}
+
 .tagline {
   max-width: 720px;
   margin: 0 auto 1.5rem;

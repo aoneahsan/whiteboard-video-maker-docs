@@ -1,65 +1,19 @@
-# Whiteboard Video Maker Docs — Project Rules
+# Whiteboard Video Maker — public docs
 
-Public documentation site for **Whiteboard Video Maker** (app: https://wbamai.aoneahsan.com).
-Built with **Docusaurus 3**. This is a **PUBLIC** repo — it must contain **NO secrets**.
+**Last Updated:** 2026-10-14
+**Context pass:** 2026-10-14; next routine optimization eligible 2026-11-13.
 
-| Property | Value |
-|----------|-------|
-| Type | Docusaurus 3 documentation site |
-| App docs URL | https://wbamai-docs.aoneahsan.com |
-| App (product) URL | https://wbamai.aoneahsan.com |
-| Hosting | Firebase Hosting + GitHub Pages (dual-host, same `build/`) |
-| Package manager | yarn ONLY |
-| Repo visibility | PUBLIC (no secrets, ever) |
+This is the independent, public `aoneahsan/whiteboard-video-maker-docs` repository on `main`, nested under `../whiteboard-animation-maker-root/`. It uses Docusaurus 3.10.2 and Yarn 4. Read the target page and current product behavior before updating a claim. The product app is the sibling `../whiteboard-animation-maker/` checkout; its old Firebase backend is outside this maintenance pass.
 
-## Rules
+## Routing and content
 
-- **yarn only** — no npm/pnpm; only `yarn.lock`. `nvm`→`npm`(global)→`yarn`(local) hierarchy.
-- **No secrets in this repo** (it is public). No `.env` committed; keep it gitignored.
-- **Honest content only** — document the REAL product. Export is **WebM + animated GIF, NOT MP4**.
-  State limits as clearly as features (Task Speed Over Docs still applies to meta-work).
-- **SEO floor** — `static/robots.txt` (AI-bot allowlist + `Sitemap:`), Docusaurus-generated
-  `sitemap.xml`, `static/llms.txt`, JSON-LD (WebSite + SoftwareApplication + Organization) in
-  `docusaurus.config.ts`, per-page front-matter `description` + `keywords`.
-- **Verify** with `yarn build` + `yarn typecheck` (never run dev servers as a "verification").
-- **Firebase Hosting deploy is agent-authorized** (project is under `code/` — global auto-deploy rule)
-  via `yarn firebase:deploy`; see `DEPLOY.md`. **Custom-domain DNS attachment stays USER-ONLY.**
-- **Content tracker:** `docs/tracking/whiteboard-video-maker-docs-content-tracker.json` (resumable
-  long-tail SEO enrichment).
+- `docs/` holds guides and reference material; `src/pages/index.tsx` and `src/pages/index.module.css` own the docs landing page; `src/css/custom.css` owns shared theme tokens.
+- Keep feature and export claims factual. Browser export is WebM and animated GIF, not MP4. Do not invent measurements, testimonials, supported integrations or platform status.
+- Pages need front matter and working links. `docusaurus.config.ts`, `static/robots.txt`, `static/llms.txt` and generated sitemap define search metadata. Check visible content against schema claims.
+- This public repository must not contain secrets or a working `.env`. Use optional GitHub Actions secrets only through the workflow; keep source files secret-free.
 
-## Commands
+## Verification and release
 
-```bash
-yarn install
-yarn build       # static build into ./build  (verification gate)
-yarn typecheck   # tsc --noEmit
-yarn start       # dev server (port 5962) — USER runs this, not the agent
-```
+Use `yarn install --immutable`, `yarn typecheck`, and `yarn build`. Preview built output in a controlled desktop and mobile browser before pushing. The `.github/workflows/deploy-pages.yml` workflow publishes `build/` to GitHub Pages on each `main` push; custom domain is `wbamai-docs.aoneahsan.com` with HTTPS enforced. `DEPLOY.md` gives the current check path. An older Firebase Hosting deployment is historical and is not the target of this pass.
 
-_Last Updated: 2026-07-25_
-
-
-## Sub-agents & Skills — Main-Context-First (IRON-SOLID)
-Default/built-in sub-agents (`general-purpose`, `Explore`, `Plan`, `claude`, `fork`, …) do NOT have
-access to `/skills`, so delegating to them silently SKIPS the skills RULE #0 requires. Do all
-skill-relevant work in the **MAIN context**; use a sub-agent ONLY when a **custom** agent exists in
-`.claude/agents/` for that job; a default `Explore`/`Plan` agent is allowed ONLY for read-only,
-no-skill search/exploration. When a relevant skill is missing, **install/enable it** rather than
-proceeding skill-less. (Owner directive 2026-07-11; full text in `~/.claude/CLAUDE.md`.)
-
-<!-- RULE:main-context-model-workflow v2026-07-16 -->
-## Main-Context + Skills + Model Workflow (IRON-SOLID — CRITICAL)
-1. **NO default/built-in sub-agents** (`general-purpose`, `Explore`, `Plan`, `claude`, `fork`, …) for ANY work in
-   this project — they cannot invoke /skills, which RULE #0 makes mandatory. Do ALL work (planning, implementation,
-   review, exploration) in the MAIN context. A sub-agent is allowed ONLY when a CUSTOM agent exists in
-   `.claude/agents/` for that exact job.
-2. **Skills always:** before any task, scan the available-skills list and invoke EVERY relevant skill; if a needed
-   skill is missing, download/enable/install it (or use the nearest installed equivalent and say so) — never
-   proceed skill-less.
-3. **Model workflow:** PLAN and REVIEW on **Fable 5**; EXECUTE the approved plan on **Opus 4.8**. Plans in
-   `~/.claude/plans/`; multi-phase features keep a resumable tracker (`docs/features/<slug>/00-tracker.json`),
-   resumed rather than re-planned from zero.
-
-Global records (rules, policy, audit reports) live in the `ahsan-notebook` repo at
-`static/assets/claude-code/`; the `~/.claude/…` paths are symlinks into it. Full text: `~/.claude/CLAUDE.md`.
-(Owner directives 2026-07-11 / 2026-07-14; fleet-rolled 2026-07-16.)
+Fetch and merge remote changes immediately before committing and pushing directly to `main`. Review the full diff and confirm the Pages workflow and live URL after push. Never force-push. Follow the workspace 30-day context cadence rather than the older three-day instructions.

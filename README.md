@@ -1,41 +1,17 @@
-# Whiteboard Video Maker — Documentation
+# Whiteboard Video Maker docs
 
-Public documentation site for **[Whiteboard Video Maker](https://wbamai.aoneahsan.com)**, a free
-browser- and mobile-based whiteboard-animation video editor.
+**Last Updated:** 2026-10-14
 
-- **App:** https://wbamai.aoneahsan.com
-- **Docs (this site):** https://wbamai-docs.aoneahsan.com
-- **Built with:** [Docusaurus 3](https://docusaurus.io)
-- **Hosting:** Firebase Hosting **and** GitHub Pages (dual-host — same `build/` output)
+Public documentation for [Whiteboard Video Maker](https://wbamai.aoneahsan.com), published at [wbamai-docs.aoneahsan.com](https://wbamai-docs.aoneahsan.com). The site uses Docusaurus 3.10.2 and deploys to GitHub Pages from `main`. It documents browser export as WebM or animated GIF; it does not claim MP4 export.
 
-## Local development
+<a id="verify-locally"></a>
+## Verify locally&nbsp;[#](#verify-locally)
 
 ```bash
-yarn install
-yarn start     # dev server on http://localhost:5962
-yarn build     # static build into ./build
-yarn typecheck # tsc --noEmit
+yarn install --immutable
+yarn typecheck
+yarn build
+yarn serve --host 127.0.0.1
 ```
 
-> This repo is **yarn-only**. Do not commit `package-lock.json` or `pnpm-lock.yaml`.
-
-## Structure
-
-```
-docs/                 Markdown docs (intro, getting-started, features, guides, reference, faq, author)
-src/pages/index.tsx   Landing page
-src/css/custom.css    Violet brand theme
-static/               robots.txt, llms.txt, CNAME, img/ (logo, favicon, social-card)
-docusaurus.config.ts  Site config + SEO head tags + JSON-LD
-sidebars.ts           Sidebar layout
-firebase.json         Firebase Hosting config
-.github/workflows/    GitHub Pages deploy workflow
-```
-
-## Deploying
-
-See [`DEPLOY.md`](./DEPLOY.md). Both hosting paths are **user-only** actions.
-
-## License
-
-Documentation © Ahsan Mahmood. Built with Docusaurus.
+`yarn serve` previews the built site on port 5963. Check desktop and mobile views before pushing. See [`DEPLOY.md`](DEPLOY.md) for Pages verification and [`AGENTS.md`](AGENTS.md) for source routing. The product repository is the independent sibling checkout `../whiteboard-animation-maker/`.

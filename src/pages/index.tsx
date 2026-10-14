@@ -49,7 +49,11 @@ function HomepageHeader(): ReactNode {
           <Link className="button button--secondary button--lg" to="/getting-started/quick-start">
             Quick Start
           </Link>
-          <Link className="button button--outline button--secondary button--lg" to="/intro">
+          <Link
+            className={clsx('button button--lg', styles.docsButton)}
+            style={{ color: '#ffffff', borderColor: '#c4b5fd' }}
+            to="/intro"
+          >
             Read the docs
           </Link>
           <Link className="button button--primary button--lg" href={APP_URL}>
